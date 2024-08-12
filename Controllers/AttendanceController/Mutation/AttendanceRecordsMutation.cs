@@ -6,7 +6,6 @@ namespace HR_Management_System.Controllers.AttendanceController.Mutation
     [ExtendObjectType(Name = "EmployeeMutation")]
     public class AttendanceRecordsMutation
     {
-
         // Resolver to add a new attendance record
         public async Task<AttendanceRecords> AddAttendanceRecordAsync(AttendanceRecords input, [Service] HRDBContext context)
         {
@@ -22,6 +21,5 @@ namespace HR_Management_System.Controllers.AttendanceController.Mutation
             await context.SaveChangesAsync();
             return attendanceRecord;
         }
-
     }
 }

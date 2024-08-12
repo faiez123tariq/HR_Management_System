@@ -12,7 +12,9 @@ namespace HR_Management_System.Data
 {
     public class HRDBContext : DbContext
     {
-        public HRDBContext(DbContextOptions<HRDBContext> options) : base(options) { }
+        public HRDBContext(DbContextOptions<HRDBContext> options) : base(options)
+        {
+        }
 
         public DbSet<Employees> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
@@ -118,5 +120,4 @@ namespace HR_Management_System.Data
             base.OnModelCreating(modelBuilder);
         }
     }
-
 }

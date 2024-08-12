@@ -7,9 +7,12 @@ namespace HR_Management_System.Models.RecruitmentModel
     {
         [Key]
         public int ApplicationID { get; set; }
+
         public int JobOpeningId { get; set; }
+
         [ForeignKey("JobOpeningId")]
         public JobOpenings JobOpening { get; set; }
+
         public string CandidateName { get; set; }
         public string CandidateEmail { get; set; }
         public string Resume { get; set; }

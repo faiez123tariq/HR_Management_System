@@ -7,9 +7,12 @@ namespace HR_Management_System.Models.ReportingModel
     {
         [Key]
         public int ReportID { get; set; }
+
         public int ReportCategoryId { get; set; }
+
         [ForeignKey("ReportCategoryId")]
         public ReportCategories ReportCategory { get; set; }
+
         public string ReportName { get; set; }
         public DateTime GeneratedDate { get; set; }
         public int GeneratedBy { get; set; }

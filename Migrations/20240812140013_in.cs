@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HR_Management_System.Migrations
 {
     /// <inheritdoc />
-    public partial class initialDatabase : Migration
+    public partial class @in : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -154,8 +154,8 @@ namespace HR_Management_System.Migrations
                     AttendanceID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     EmployeeId = table.Column<int>(type: "int", nullable: false),
-                    CheckInTime = table.Column<TimeSpan>(type: "time", nullable: false),
-                    CheckOutTime = table.Column<TimeSpan>(type: "time", nullable: false),
+                    CheckInTime = table.Column<TimeOnly>(type: "time", nullable: false),
+                    CheckOutTime = table.Column<TimeOnly>(type: "time", nullable: false),
                     Status = table.Column<string>(type: "VARCHAR(10)", maxLength: 10, nullable: true),
                     AttendanceDayId = table.Column<int>(type: "int", nullable: false)
                 },

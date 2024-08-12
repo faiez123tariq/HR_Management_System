@@ -8,9 +8,12 @@ namespace HR_Management_System.Models.PayrollModel
     {
         [Key]
         public int BonusId { get; set; }
+
         public int EmployeeId { get; set; }
+
         [ForeignKey("EmployeeId")]
         public Employees Employees { get; set; }
+
         public decimal BonusAmount { get; set; }
         public string BonusReason { get; set; }
         public DateOnly BonusDate { get; set; }

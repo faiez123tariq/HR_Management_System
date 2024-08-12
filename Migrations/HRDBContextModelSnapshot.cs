@@ -71,10 +71,10 @@ namespace HR_Management_System.Migrations
                     b.Property<int>("AttendanceDayId")
                         .HasColumnType("int");
 
-                    b.Property<TimeSpan>("CheckInTime")
+                    b.Property<TimeOnly>("CheckInTime")
                         .HasColumnType("time");
 
-                    b.Property<TimeSpan>("CheckOutTime")
+                    b.Property<TimeOnly>("CheckOutTime")
                         .HasColumnType("time");
 
                     b.Property<int>("EmployeeId")

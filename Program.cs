@@ -8,19 +8,13 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-
 //// Add services to the container.
 builder.Services.AddControllers();
-
 
 // Here we will add the services of the sql Server database
 builder.Services.AddDbContext<HRDBContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("HRConnection"))
  );
-
-
-
 
 //Add the services of the graphql
 builder.Services.AddGraphQLServer()
@@ -39,11 +33,6 @@ builder.Services.AddGraphQLServer()
                 .AddFiltering()
                 .AddSorting();
 
-
-
-
-
-
 //Here we add the cors policy authentication
 
 builder.Services.AddCors(options =>
@@ -57,11 +46,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-
-
-
-
-
 // here we add the cloudinary for image storage.
 builder.Services.AddSingleton<ImageService>();
 builder.Services.AddControllersWithViews();
@@ -73,10 +57,6 @@ var cloudinaryAccount = new Account(
     );
 Cloudinary cloudinary = new Cloudinary(cloudinaryAccount);
 builder.Services.AddSingleton(cloudinary);
-
-
-
-
 
 var app = builder.Build();
 app.MapGraphQL();

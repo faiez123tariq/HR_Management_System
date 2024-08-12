@@ -9,12 +9,14 @@ namespace HR_Management_System.Models.PayrollModel
     {
         [Key]
         public int HistoryId { get; set; }
+
         public int EmployeeId { get; set; }
+
         [ForeignKey("EmployeeId")]
         public Employees Employees { get; set; }
+
         public decimal ChangeAmount { get; set; }
         public string ChangeReason { get; set; }
         public DateOnly EffectiveDate { get; set; }
-
     }
 }

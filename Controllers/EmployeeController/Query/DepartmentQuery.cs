@@ -5,7 +5,6 @@ namespace HR_Management_System.Controllers.EmployeeController
     [ExtendObjectType(Name = "EmployeeQuery")]
     public class DepartmentQuery
     {
-
         // Resolver to get all departments.
         [UseProjection]
         [UseFiltering]
@@ -14,6 +13,5 @@ namespace HR_Management_System.Controllers.EmployeeController
         {
             return _context.Departments;
         }
-
     }
 }

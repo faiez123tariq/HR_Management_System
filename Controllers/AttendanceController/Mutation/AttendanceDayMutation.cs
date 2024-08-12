@@ -17,6 +17,5 @@ namespace HR_Management_System.Controllers.AttendanceController.Mutation
             await context.SaveChangesAsync();
             return attendanceDay;
         }
-
     }
 }

@@ -4,33 +4,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HR_Management_System.Controllers.EmployeeController.Mutation
 {
-
-
     public class EmployeeMutation
     {
-
-
-
-
         // DBContext and ImageService dependency injection.
         private readonly HRDBContext _context;
+
         private readonly ImageService _imageService;
+
         public EmployeeMutation(HRDBContext context, ImageService imageService)
         {
             _context = context;
             _imageService = imageService;
         }
 
-
-
-
-
-
-
         // Resolver to add Employee with image upload.
         public async Task<Employees> AddEmployee(IFile? file, Employees input)
         {
-
             string imageString = await _imageService.UploadImageAsync(file);
             var employee = new Employees
             {
@@ -60,12 +49,6 @@ namespace HR_Management_System.Controllers.EmployeeController.Mutation
             await _context.SaveChangesAsync();
             return employee;
         }
-
-
-
-
-
-
 
         // Resolver to update Employee with image upload.
         public async Task<Employees> UpdateEmployee(IFile? newFile, Employees input)
@@ -111,13 +94,6 @@ namespace HR_Management_System.Controllers.EmployeeController.Mutation
             return employee;
         }
 
-
-
-
-
-
-
-
         // Resolver to Delete the Employee.
         public async Task<Employees> DeleteEmployeeAsync(int ID)
         {
@@ -149,9 +125,5 @@ namespace HR_Management_System.Controllers.EmployeeController.Mutation
                 throw new GraphQLException($"Employee with ID {ID} not found.");
             }
         }
-
-
-
-
     }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HR_Management_System.Migrations
 {
     [DbContext(typeof(HRDBContext))]
-    [Migration("20240808153327_ImageUpload")]
-    partial class ImageUpload
+    [Migration("20240812140013_in")]
+    partial class @in
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,10 +74,10 @@ namespace HR_Management_System.Migrations
                     b.Property<int>("AttendanceDayId")
                         .HasColumnType("int");
 
-                    b.Property<TimeSpan>("CheckInTime")
+                    b.Property<TimeOnly>("CheckInTime")
                         .HasColumnType("time");
 
-                    b.Property<TimeSpan>("CheckOutTime")
+                    b.Property<TimeOnly>("CheckOutTime")
                         .HasColumnType("time");
 
                     b.Property<int>("EmployeeId")

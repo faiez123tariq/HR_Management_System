@@ -1,13 +1,10 @@
 ﻿using HR_Management_System.Data;
-using HR_Management_System.Models.EmployeeModel;
 
 namespace HR_Management_System.Controllers.EmployeeController.Mutation
 {
-
     [ExtendObjectType(Name = "EmployeeMutation")]
     public class DepartmentMutation
     {
-
         // Resolver to add Department.
         public async Task<Department> AddDepartment([Service] HRDBContext _context, Department input)
         {
@@ -20,9 +17,6 @@ namespace HR_Management_System.Controllers.EmployeeController.Mutation
             await _context.SaveChangesAsync();
             return department;
         }
-
-
-
 
         // Resolver to update Department.
         public async Task<Department> UpdateDepartment(Department input, [Service] HRDBContext _context)
@@ -37,10 +31,6 @@ namespace HR_Management_System.Controllers.EmployeeController.Mutation
             await _context.SaveChangesAsync();
             return department;
         }
-
-
-
-
 
         // Resolver to Delete the Department.
         public async Task<Department> DeleteDepartmentAsync(int ID, [Service] HRDBContext _context)
@@ -61,9 +51,5 @@ namespace HR_Management_System.Controllers.EmployeeController.Mutation
                 throw new GraphQLException(ex.Message);
             }
         }
-
-
-
-
     }
 }

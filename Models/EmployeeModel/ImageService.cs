@@ -1,13 +1,8 @@
 ﻿using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
-using System;
-using System.Threading.Tasks;
 
 public class ImageService
 {
-
-
-
     // Coudinary Service Injection.
     private readonly Cloudinary _cloudinary;
 
@@ -15,9 +10,6 @@ public class ImageService
     {
         _cloudinary = cloudinary;
     }
-
-
-
 
     // Resolver to upload image into Cloudinary.
     public async Task<string> UploadImageAsync(IFile file)
@@ -36,10 +28,6 @@ public class ImageService
             throw new Exception(ex.Message);
         }
     }
-
-
-
-
 
     // Resolver to delete image from Cloudinary.
     public async Task DeleteImageAsync(string imageUrl)
@@ -66,11 +54,6 @@ public class ImageService
         }
     }
 
-
-
-
-
-
     // Resolver to extract the public ID from the image URL.
     private string ExtractPublicIdFromUrl(string imageUrl)
     {
@@ -83,8 +66,4 @@ public class ImageService
         }
         return null;
     }
-
-
-
-
 }

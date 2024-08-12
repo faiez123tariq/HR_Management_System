@@ -8,12 +8,17 @@ namespace HR_Management_System.Models.PerformanceModel
     {
         [Key]
         public int ReviewID { get; set; }
+
         public int EmployeeId { get; set; }
+
         [ForeignKey("EmployeeId")]
         public Employees Employee { get; set; }
+
         public int ReviewerId { get; set; }
+
         [ForeignKey("ReviewerId")]
         public Employees Reviewer { get; set; }
+
         public DateOnly ReviewDate { get; set; }
         public int OverallScore { get; set; }
         public string Comments { get; set; }

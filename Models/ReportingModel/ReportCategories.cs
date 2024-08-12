@@ -6,6 +6,7 @@ namespace HR_Management_System.Models.ReportingModel
     {
         [Key]
         public int ReportCategoryId { get; set; }
+
         public string CategoryName { get; set; }
         public ICollection<Reports> Reports { get; set; }
     }

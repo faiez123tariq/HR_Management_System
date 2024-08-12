@@ -8,9 +8,12 @@ namespace HR_Management_System.Models.RecruitmentModel
     {
         [Key]
         public int InterviewerID { get; set; }
+
         public int EmployeeId { get; set; }
+
         [ForeignKey("EmployeeId")]
         public Employees Employee { get; set; }
+
         public ICollection<Interviews> Interviews { get; set; }
     }
 }
